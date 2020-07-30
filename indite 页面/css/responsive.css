@@ -1,0 +1,219 @@
+@media screen and (max-width:1024px) {
+    #container {
+        margin-top: 0;
+        border-radius: 0;
+    }
+}
+@media screen and (max-width:960px) {
+    #container {
+        flex-direction: column;
+        padding-right: 80px;
+    }
+    header {
+        width: 100%;
+    }
+    .nav-header {
+        padding-bottom: 20px;
+    }
+    .nav-header {
+        padding-bottom: 20px;
+    }
+
+    .nav-header ul {
+        display: flex;
+    }
+    .nav-header .item a {
+        padding: 16px 24px 16px 0;
+        margin: 0;
+        width: auto;
+    }
+    .nav-header .item a:hover {
+        background: #ffffff;
+    }
+    .nav-header .item a.active::before {
+        display: none;
+    }
+    #profile {
+        border-top: 1px solid #eee;
+        margin: 0 -50px;
+        padding: 30px 50px 20px 0;
+    }
+    #profile .p-img {
+        width: 110px;
+        height: 120px;
+        margin-left: 0;
+        float: left;
+    }
+    #profile .p-img img {
+        width: 100px;
+        height: 100px;
+    }
+    #profile .p-name,#profile .p-des{
+        padding-left: 160px;
+    }
+    header .sidebar {
+        display: none;
+    }
+
+    .sidebar-group {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+    }
+    .sidebar-group .social-tooltip:hover::before,
+    .sidebar-group .social-tooltip:hover::after {
+        display: none;
+    }
+    main section article img {
+        width: 100%;
+    }
+    main .content-sidebar {
+        display: block;
+        background: #ffffff;
+        margin: 0 -40px;
+    }
+}
+
+@media screen and (max-width:720px) {
+    #container {
+        padding-right: 0;
+    }
+    header .h-title {
+        text-align: center;
+        padding: 10px 0;
+        margin-top: -20px;
+    }
+    header .h-des {
+        display: none;
+    }
+    .nav-header {
+        margin: 0 -50px;
+        padding-bottom: 0;
+        border-top: 1px solid #eee;
+        position: relative;
+        min-height: 48px;
+    }
+    .nav-header .n-toggle {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60px;
+        height: 48px;
+        text-align: center;
+    }
+    .nav-header .n-toggle i {
+        font-size: 24px;
+        padding: 10px 0;
+    }
+    .nav-header .n-toggle.close{
+        background: #ffffff;
+    }
+    #n-ul {
+        margin-top: 48px;
+        display: none;
+        padding-bottom: 50px;
+    }
+    /* :target 选择器可用于选取当前活动的目标元素 */
+    #n-ul:target {
+        display: block;
+    }
+
+    .nav-header .item a {
+        font-size: 15px;
+        color: rgba(0, 0, 0, 0.7);
+        padding: 8px 20px;
+        border-bottom: 1px solid #f1f1f1;
+        display: block;
+    }
+    .nav-header .item .s-menu {
+        display: block;
+        position: relative;
+        border: none;
+        box-shadow: none;
+        margin-left: 40px;
+        width: 100%;
+        padding: 0;
+        margin-top: 0;
+    }
+    .nav-header .item .s-menu::before {
+        display: none;
+    }
+    .nav-header .item .s-menu a {
+        font-size: 15px;
+        font-weight: 300;
+        padding: 6px 15px;
+    }
+
+    .sidebar-group {
+        position: relative;
+        width: 100%;
+        border: none;
+        height: auto;
+    }
+    .sidebar-group .toggle-search {
+        display: none;
+    }
+    .sidebar-group .social-links {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+    .sidebar-group .sg-item::before {
+        display: none;
+    }
+    .sidebar-group .social-tooltip {
+        margin: 0;
+    }
+    main {
+        padding: 40px 20px;
+    }
+    
+    main .content-title {
+        font-size: 28px;
+    }
+
+    main .content-description {
+        font-size: 15px;
+    }
+
+    main .content .more-link {
+        font-size: 15px;
+    }
+
+    main .content-sidebar .s-container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    main .footer-sidebar {
+        display: block;
+        padding-bottom: 30px;
+    }
+    main .footer-sidebar .s-container{
+        width: 100%;
+        padding: 20px 0;
+    }
+}
+
+@media screen and (max-width:480px) {
+    main {
+        padding: 30px 0;
+    }
+
+    main section article {
+        border-radius: 0;
+    }
+
+    main .content-box {
+        position: relative;
+        padding: 34px 20px 20px;
+    }
+
+    main .content-sidebar,
+    main .footer-sidebar {
+        margin: 0 -20px;
+    }
+
+}
+

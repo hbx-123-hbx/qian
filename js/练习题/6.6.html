@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        
+    <meta charset="UTF-8">
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+</head>
+
+<body>
+        
+    <script>
+        var sum = 0;
+        var average = 0;
+        var result = '';
+        var score = 0;
+        for (var i = 0; i < 7; i++) {
+            score = parseInt(prompt());
+            sum += score;
+            if (score < 60) {
+                result += score + ','
+            }
+        }
+        average = sum / 7;
+        document.write('总成绩：' + sum + '<br>');
+        document.write('平均成绩：' + average + '<br>');
+        document.write('小于60的：' + result);
+
+//         var arr = new Array();
+//         var sum = 0;
+//         var avg = 0;
+//         for(var i=0;i<7;i++){
+//             var num = 0;
+//             num = window.prompt("请输入第"+(i+1)+"门成绩");
+//             num = parseInt(num);
+//             arr.push(num);
+//         }
+//         for(var j=0;j<7;j++){
+//             sum+=arr[j];
+//             if(arr[j]<60){
+//                 console.log(arr[j]+"小于60分");
+//             }
+//         }
+//         console.log("总分为；"+sum);
+//         console.log("平均值是；"+sum/7);
+    </script>
+</body>
+
+</html>

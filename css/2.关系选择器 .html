@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 后代选择器 */
+        #box p{
+            background-color: green;
+        }
+        /* 子代选择器 */
+        #box>p{
+            border: blueviolet 5px dotted;
+        }
+        /* 兄弟选择器 */
+        #box~p{
+            color: chocolate;
+        } 
+        /* 相邻选择器 */
+        #box+p{
+            font-size: 30px;
+        }
+        /* 属性选择器 */
+        input[name="age"]{
+            background-color: cornflowerblue;
+        }
+        input[id]{
+            background-color: chartreuse;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div>
+            <p>31</p>
+            <p>32</p>
+        </div>
+        <p>21</p>
+        <p>22</p>
+    </div>
+    <p>11</p>
+    <p>12</p>
+    <h1>13</h1>
+    <h2>14</h2>
+
+     后代选择器
+     子代选择器
+     兄弟选择器
+     相邻选择器
+
+    <input type="text" name="age" >
+    <input type="text" name="" id="">
+    <input type="text" name="" id="">
+
+    属性选择器
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person (name ,idCard){
+            this.name = name;
+            this.idCard = idCard;
+        }
+        var person1 = new Person('list1','662');
+        var person2 = new Person('list2','146161');
+
+        function Book (name ,hao){
+            this.name = name;
+            this.hao = hao;
+        }
+        var book1 = new Book('大学英语','555');
+        var book2 = new Book('大学语文','55322');
+
+        function Manager(){}
+        Manager.prototype.regist = function(person,book){
+            console.log(person.name+book.name);
+        }
+
+        var manager1 = new Manager();
+        manager1.regist(person1,book1);
+        var manager2 = new Manager();
+        manager2.regist(person2,book2);
+
+
+
+
+
+
+    </script>
+</body>
+</html>

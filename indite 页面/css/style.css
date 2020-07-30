@@ -1,0 +1,576 @@
+/* ------------------------------------------------------------------------- *
+ *  基本 Styles
+/* ------------------------------------------------------------------------- */
+body {
+	font-family: "Roboto", Arial, sans-serif;
+	background: #f5f5f5;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #444;
+	font-weight: 300;
+}
+/* ::selection选择器匹配元素中被用户选中或处于高亮状态的部分。
+::selection只可以应用于少数的CSS属性：color, background, cursor,和outline。 */
+::selection {
+	background: #333;
+	color: #fff;
+}
+
+::-moz-selection {
+	background: #333;
+	color: #fff;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+	outline: 0;
+}
+
+a:hover {
+	color: #333;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a,
+a:before,
+a:after {
+	transition-property: background color;
+	/* 变化的属性 */
+	transition-duration: 0.2s;
+	/* 动画时间 */
+	transition-timing-function: ease;
+	/* 动画执行的方式 */
+}
+
+a img {
+	transition: opacity 0.2s ease;
+}
+#container {
+	margin: 40px auto;
+	max-width: 1200px;
+	background: #f5f5f5;
+	box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+	/* box-shadow属性可以设置一个或多个下拉阴影的框。 */
+	border-radius: 10px;
+	overflow: hidden;
+	display: flex;
+}
+
+/* ------------------------------------------------------------------------- *
+ *  header开始
+/* ------------------------------------------------------------------------- */
+header {
+	width: 320px;
+	padding: 20px 50px;
+	border-top: 10px solid #32c1fb;
+	background: #fff;
+	box-sizing: border-box;
+	/* 规定两个并排的带边框的框 */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.05), 1px 0 rgba(0, 0, 0, 0.05);
+	z-index: 1;
+}
+.h-title {
+	font-size: 36px;
+    font-weight: 600;
+	letter-spacing: -0.5px;
+	/* 增加或减少字符间的空白（字符间距） */
+    line-height: 1.2em;
+    padding: 20px 0;
+    
+
+}
+.h-title .h-img {
+    display: block;
+	max-width: 100%;
+}
+.h-title img {
+    max-height: 60px;
+
+}
+.h-des{
+    font-size: 16px;
+    line-height: 1.6em;
+    font-weight: 300;
+    color: #888;
+    padding-bottom: 20px;
+}
+.nav-header .item a {
+	color: #666666;
+	font-size: 18px;
+	font-weight: 600;
+	padding: 16px 50px;
+	display: inline-block;
+	width: 220px;
+	height: 20px;
+	line-height: 20px;
+	margin: 0 -50px;
+}
+.nav-header .item>a:hover {
+	background: #f5f5f5;
+	color: #333;
+}
+.nav-header .item>a.active {
+	color: #333;
+	position: relative;
+}
+/* 左面小三角 */
+.nav-header .item>a.active::before {
+	content: '';
+	display: block;
+	width: 14px;
+	height: 14px;
+	background: #e3e3e3;
+	position: absolute;
+	left: -7px;
+	top: 19px;
+	transform: rotate(45deg);
+}
+/* 字后面小三角 */
+.nav-header .item>a.sub::after {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	display: inline-block;
+	content: "\f0d7";
+	margin-left: 6px;
+	font-size: 14px;
+	line-height: 1.2em;
+	opacity: 0.35;
+	/* 设置元素的不透明级别 */
+}
+.nav-header .item>a.sub:hover+.s-menu {
+	display: block;
+}
+
+.nav-header .item .s-menu {
+	display: none;
+	padding: 10px 0;
+	width: 220px;
+	background: #ffffff;
+	border-radius: 4px;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.05);
+	position: absolute;
+	z-index: 1;
+}
+.nav-header .item .smenu:hover {
+	display: block;
+}
+/* 框上面小三角 */
+.nav-header .item .s-menu::before {
+	content: '';
+	display: inline-block;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: -6px;
+	left: 20px;
+	background: #ffffff;
+	transform: rotate(45deg);
+}
+.nav-header .item .s-menu a {
+	font-size: 16px;
+	padding: 8px 20px;
+	font-weight: 400;
+	margin: 0;
+}
+.nav-header .item .s-menu a:hover {
+	color: #333333;
+}
+#profile {
+	margin: 30px 0 40px;
+}
+#profile .p-img {
+	border: 10px solid #8c53ff;
+	border-top-color: #32c1fb;
+	border-bottom-color: #ddd;
+	border-left: 0;
+	border-radius: 0 150px 150px 0;
+	width: 260px;
+	height: 270px;
+	margin-left: -50px;
+	margin-bottom: 10px;
+}
+#profile .p-img img {
+	border: 10px solid #fff;
+	border-left: 0;
+	border-radius: 0 240px 240px 0;
+	width: 250px;
+	height: 250px;
+}
+#profile .p-name {
+	color: #333;
+	font-size: 22px;
+	font-weight: 600;
+	line-height: 1.2em;
+	padding: 20px 0;
+}
+
+#profile .p-des{
+	font-size: 16px;
+	line-height: 1.6em;
+	font-weight: 300;
+	color: #888;
+}
+/* ------------------------------------------------------------------------- *
+ *  header结束
+/* ------------------------------------------------------------------------- */
+.sidebar {
+	margin: 0 -50px;
+}
+
+.sidebar .s-container {
+	padding: 30px 50px;
+	border-top: 1px solid #eee;
+	font-size: 14px;
+}
+
+.sidebar .s-container h3 {
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.sidebar  .s-container li {
+	padding: 7px 0;
+	color: #999;
+}
+
+.sidebar .s-container a {
+	color: #999;
+	font-size: 14px;
+}
+.sidebar .s-container a:hover {
+	color: #333;
+}
+/* 前两个小图案 */
+.sidebar li::before {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 12px;
+	margin-right: 6px;
+	color: #ccc;
+	display: inline-block;
+	width: 1em;
+	text-align: center;
+}
+.sidebar .comment li::before {
+	content: "\f075";
+}
+
+.sidebar .post li::before {
+	content: "\f017";
+}
+.sidebar .post li:hover::before {
+	color: #999999;
+	transition: all ease 0.2s;
+}
+.sidebar .search input {
+	border: 2px solid #e5e5e5;
+	padding: 9px 8px 9px 26px;
+	width: 100%;
+	box-sizing: border-box;
+	outline: none;
+	/* outline （轮廓）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。 */
+}
+
+/* 选择获得焦点的输入字段，并设置其样式
+https://www.w3school.com.cn/cssref/selector_focus.asp */
+.sidebar .search .search-item input:focus {
+	border-color: #ddd;
+	color: blue;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+.sidebar .search .search-item {
+	position: relative;
+}
+/* search小图案 */
+.sidebar .search .search-item::before {
+	color: #ccc;
+	line-height: 24px;
+	font-size: 14px;
+	content: "\f002";
+	position: absolute;
+	left: 10px;
+	top: 6px;
+	font-family: "Font Awesome 5 Free";
+	/* 规定元素的字体系列 */
+	font-weight: 900;
+}
+
+.sidebar-group {
+	background: #fff;
+	border-top: 10px solid #8c53ff;
+	width: 80px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.05), 1px 0 rgba(0, 0, 0, 0.05), -1px 0 rgba(0, 0, 0, 0.05);
+}
+.sidebar-group .toggle-search {
+	background: #fff;
+	border: 1px solid #eee;
+	color: #333;
+	text-align: center;
+	font-size: 20px;
+	line-height: 24px;
+	border-radius: 10px;
+	padding: 18px 0;
+	margin: 10px;
+	display: block;
+}
+.sidebar-group .social-links {
+	margin-top: 30px;
+}
+.sidebar-group .social-tooltip {
+	font-size: 20px;
+	padding: 18px 10px;
+	margin: 0 20px;
+	color: rgba(0, 0, 0, 0.7);
+	display: block;
+	position: relative;
+}
+.sidebar-group .social-tooltip:hover {
+	background: rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	color: #333;
+}
+/* 气泡小三角 */
+.sidebar-group .social-tooltip:hover::before {
+	content: '';
+	display: block;
+	border: solid;
+	border-width: 5px 5px 5px 0;
+	border-color: transparent #333;
+	position: absolute;
+	left: 45px;
+	top: 24px;
+}
+/* 气泡 */
+.sidebar-group .social-tooltip:hover::after {
+	content: attr(title);
+	/* 如果你不想把content内容在CSS里写死，那你可以使用attr表达式来从页面元素中动态的获取内容 */
+	display: block;
+	background: #333;
+	color: #fff;
+	padding: 8px 10px;
+	font-size: 14px;
+	line-height: 14px;
+	border-radius: 3px;
+	position: absolute;
+	top: 14px;
+	left: 50px;
+}
+.sidebar-group .sg-item{
+	position: relative;
+	text-align: center;
+	padding: 4px 0;
+}
+
+/* li之间短横线 */
+.sidebar-group .sg-item::before {
+	content: "";
+	height: 1px;
+	background: rgba(0, 0, 0, 0.06);
+	position: absolute;
+	left: 30px;
+	right: 30px;
+	top: 0;
+}
+.sidebar-group .sg-item:first-child::before {
+	display: none;
+}
+
+main {
+	padding: 40px;
+	flex: 1;
+	border-top: 10px solid #eee;
+}
+main section article {
+	background: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+	border-radius: 10px;
+	width: 100%;
+	overflow: hidden;
+	margin-bottom: 40px;
+}
+
+main .content-box {
+	position: relative;
+	padding: 34px 40px 20px;
+}
+main .content-title {
+	font-weight: 600;
+	font-size: 38px;
+	line-height: 1.3em;
+	letter-spacing: -1px;
+}
+main .content-meta,
+main .content-meta a {
+	font-weight: 300;
+	font-size: 15px;
+	color: #999;
+}
+main .content-meta {
+	margin: 20px 0;
+}
+main .content-meta span {
+	margin-right: 10px;
+}
+main .content-meta span i {
+	margin-right: 6px;
+}
+main .content-meta .meta-category a {
+	display: inline-block;
+	background: #eee;
+	padding: 4px 10px;
+	margin-bottom: 3px;
+	border-radius: 10px;
+	height: 22px;
+	line-height: 22px;
+}
+main .content-meta .meta-category a:hover {
+	background: #e5e5e5;
+	color: #777;
+}
+
+main .content-description {
+	font-size: 19px;
+	line-height: 1.6em;
+	margin-bottom: 32px;
+}
+main .content {
+	padding-bottom: 20px;
+}
+main .content .more-link {
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	font-size: 17px;
+	color: #333;
+	font-weight: 600;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 10px 20px;
+	border-radius: 30px 0 0 0;
+	border-left: 10px solid #32c1fb;
+	border-top: 10px solid #8c53ff;
+}
+main .content .more-link:hover {
+	padding-right: 30px;
+}
+
+.pagination {
+	margin-bottom: 50px;
+}
+.pagination h5 {
+	color: #aaa;
+	font-size: 16px;
+	font-weight: 400;
+	margin-bottom: 1em;
+	text-align: center;
+}
+/* 小图案 */
+.pagination h5::before {
+	content: "\f15c";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	margin-right: 6px;
+}
+
+.pagination ul {
+	display: flex;
+	justify-content: center;
+}
+.pagination ul .page-item a {
+	background: #e5e5e5;
+	border-radius: 20px;
+	color: #333;
+	box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.05);
+	font-size: 16px;
+	display: inline-block;
+	height: 38px;
+	width: 38px;
+	text-align: center;
+	line-height: 38px;
+	margin-right: 1px;
+	font-weight: 600;
+}
+.pagination ul .page-item a:hover,
+.pagination ul .page-item a.active {
+	background: #fff;
+}
+
+.footer-sidebar {
+	display: flex;
+	margin: 0 -40px;
+	padding: 50px 40px;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.footer-sidebar .s-container{
+	width: 48.4%;
+	flex: 1;
+	padding: 0;
+	border: none;
+	margin-right: 3.2%;
+} 
+
+#back-to-top {
+	border: 1px solid #e5e5e5;
+	border-top: 0;
+	color: #333;
+	padding: 10px 0;
+	text-align: center;
+	display: block;
+	width: 60px;
+	height: 30px;
+	margin: 0 auto;
+	border-radius: 0 0 10px 10px;
+}
+#back-to-top i {
+	font-size: 38px;
+	position: relative;
+	top: -7px;
+}
+footer img {
+	display: block;
+	max-height: 60px;
+	margin: 20px auto;
+}
+#copyright,#credit {
+	color: #666;
+	font-weight: 300;
+	line-height: 1.6em;
+	text-align: center;
+}
+footer .social-links {
+	padding-top: 30px;
+	display: flex;
+	justify-content: center;
+}
+footer .social-tooltip {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	font-size: 20px;
+	font-weight: 400;
+	margin-left: 8px;
+}
+
+/* 后加的.content-sidebar先none，960之下block */
+.content-sidebar{
+	display: none;
+}
+
+.n-toggle{
+	display: none;
+}
+
+

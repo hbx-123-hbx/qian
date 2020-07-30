@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">div1</div>
+    <div id="div1">div2</div>
+    <ul id="ul1">
+        <li>1</li>
+        <li class="aa">2</li>
+        <li class="aa">3</li>
+    </ul>
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+    </ul>
+    <input type="text" name="age">
+    <script>
+        //id
+        var oDiv1 = document.getElementById('div1');
+        console.log(oDiv1)
+        //class
+        var oLi1 = document.getElementsByClassName('aa');
+        console.log(oLi1);
+
+        //tag
+
+        var oUl1 = document.getElementById('ul1');
+        var oLi2 = oUl1.getElementsByTagName('li');
+        console.log(oLi2);
+
+        //name
+        var oAge = document.getElementsByName('age')[0];
+        console.log(oAge) ;
+
+        //querySelectorAll(css选择器)
+        var oLi3 = document.querySelectorAll('#ul1 li');
+        console.log(oLi3);
+        //querySelector(css选择器)
+        var oLi4 = document.querySelector('#ul1 li');
+        console.log(oLi4);
+    </script>
+</body>
+</html>

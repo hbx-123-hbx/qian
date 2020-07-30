@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Array 对象
+        // https://www.w3school.com.cn/jsref/jsref_obj_array.asp
+        
+        // 1. new Array
+        // 2. 数组直接量
+                
+        // push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。
+        // pop() 方法用于删除并返回数组的最后一个元素。
+        // unshift() 方法可向数组的开头添加一个或更多元素，并返回新的长度。
+        // shift() 方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。
+        var arr1 = [5, 8, 4, 11];
+        // arr1[3] = 8;
+        // arr1.push(9);
+        // arr1.pop();
+        // arr1.unshift(4);
+        // arr1.shift();
+        console.log(arr1);
+
+        // splice() 方法可删除从 index 处开始的零个或多个元素，
+        // 并且用参数列表中声明的一个或多个值来替换那些被删除的元素。
+        // arrayObject.splice(index,howmany,item1,.....,itemX)
+        var arr = new Array(6)
+        arr[0] = "George"
+        arr[1] = "John"
+        arr[2] = "Thomas"
+        arr[3] = "James"
+        arr[4] = "Adrew"
+        arr[5] = "Martin"
+        document.write(arr + "<br />")
+        arr.splice(2, 0, "William")
+        document.write(arr + "<br />")
+
+
+        var arr = new Array(6)
+        arr[0] = "George"
+        arr[1] = "John"
+        arr[2] = "Thomas"
+        arr[3] = "James"
+        arr[4] = "Adrew"
+        arr[5] = "Martin"
+        document.write(arr + "<br />")
+        arr.splice(2, 1, "William")
+        document.write(arr)
+
+        document.write("<br/>");
+        // sort() 方法用于对数组的元素进行排序
+        var arr = new Array(6)
+        arr[0] = "George"
+        arr[1] = "John"
+        arr[2] = "Thomas"
+        arr[3] = "James"
+        arr[4] = "Adrew"
+        arr[5] = "Martin"
+
+        document.write(arr + "<br />")
+        document.write(arr.sort())
+
+        // 如果想按照其他标准进行排序，就需要提供比较函数，该函数要比较两个值，
+        // 然后返回一个用于说明这两个值的相对顺序的数字。
+        // 比较函数应该具有两个参数 a 和 b，其返回值如下：
+        // 若 a 小于 b，在排序后的数组中 a 应该出现在 b 之前，则返回一个小于 0 的值。
+        // 若 a 等于 b，则返回 0。
+        // 若 a 大于 b，则返回一个大于 0 的值。
+        document.write("<br/>");
+        function sortNumber(a, b) {
+            return a - b
+        }
+
+        var arr = new Array(6)
+        arr[0] = "10"
+        arr[1] = "5"
+        arr[2] = "40"
+        arr[3] = "25"
+        arr[4] = "1000"
+        arr[5] = "1"
+
+        document.write(arr + "<br />")
+        document.write(arr.sort(sortNumber))
+
+        // join() 方法用于把数组中的所有元素放入一个字符串。
+        // 元素是通过指定的分隔符进行分隔的
+        document.write("<br/>");
+        var arr = new Array(3)
+        arr[0] = "George"
+        arr[1] = "John"
+        arr[2] = "Thomas"
+
+        document.write(arr.join())
+        document.write("<br/>");
+        document.write(arr.join("."))
+
+
+
+        // concat()	连接两个或更多的数组，并返回结果。
+        // reverse()	颠倒数组中元素的顺序。
+        // slice()	从某个已有的数组返回选定的元素
+        // splice()	删除元素，并向数组添加新元素。
+        // toString()	把数组转换为字符串，并返回结果。
+
+        var arr = new Array(1, 2, 3);
+        console.log(arr);
+
+        var arr = [1, 2, 3];
+        var arr2 = [4, 5];
+        console.log(arr.concat(arr2));
+
+       
+        var arr = [1, 2, 3, 4, 5];
+        console.log(arr.reverse());
+        console.log(arr);
+
+
+        var arr = [1, 2, 3, 4, 5];
+        console.log(arr.slice(1, 4));
+        console.log(arr);
+
+        var arr = [1, 2, 3, 4, 5];
+        console.log(arr.splice(1, 2, 10));
+        console.log(arr);
+
+        var arr = [1, 2, 3, 4, 5];
+        arr.splice(1, 0, "a");
+        console.log(arr);
+
+
+        var arr = [1, 2, 3, 4, 5];
+        console.log(arr.toString());
+    </script>
+</body>
+
+</html>

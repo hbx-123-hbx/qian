@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        
+    <meta charset="UTF-8">
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+</head>
+
+<body>
+        
+    <script>
+
+        var str1 = prompt('str1');
+        var str2 = prompt('str2');
+        function fn(str1, str2) {
+            var result = '';
+            var strLength = Math.max(str1.length, str2.length)
+            for (var i = 0; i < strLength; i++) {
+                result += (str1[i] ? str1[i] : '') 
+                + (str2[i] ? str2[i] : '');
+            }
+            return result;
+        }
+        document.write(fn(str1, str2));
+
+
+
+        // function Merge(s1, s2) {
+        //     var min = s1.length>s2.length?s2.length:s1.length;
+        //     var maxStr = s1.length>s2.length?s1:s2;
+        //     var str = "";
+        //     for (var i = 0;i<min;i++){
+        //         str+=s1[i]+s2[i];
+        //     }
+        //     str+=maxStr.substr(min);
+        //     return str;
+        // }
+        // console.log(Merge("123456","abc"));
+    </script>
+</body>
+
+</html>

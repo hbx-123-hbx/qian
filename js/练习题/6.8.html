@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        
+    <meta charset="UTF-8">
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+</head>
+
+<body>
+        
+    <script>
+        var day = prompt('请输入日期', '2000,2,8');
+        function isLeapYear(year) {
+            if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
+                return true;
+            }
+            return false;
+        }
+        function dayOfYear(d) {
+            var result = 0;
+            var months = new
+                Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+            var aDay = d.split(','),
+                year = parseInt(aDay[0]),
+                month = parseInt(aDay[1]),
+                day = parseInt(aDay[2]);
+
+            if (isLeapYear(year)) {
+                months[1] = 29;
+            }
+            for (var i = 0; i < month - 1; i++) {
+                result += months[i];
+            }
+            result += day;
+
+            return result;
+        }
+        alert(dayOfYear(day));
+
+        
+        // function IsLeapYear(y){
+        //     if(y % 4 == 0 && y % 100 != 0 || y % 400 == 0){
+        //         return true;
+        //     }
+        //     return false;
+        // }
+        // function DayOfYear(y,m,d) {
+        //     var count =0;
+        //     months=new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+        //     if(IsLeapYear(y)){
+        //         months[1] =29; 
+        //     }
+        //     for(var i=0;i<m-1;i++){
+        //         count+=months[i];
+        //     }
+        //     return count+=d;    
+        // }
+        // console.log(DayOfYear(2019,11,23));
+    </script>
+</body>
+
+</html>

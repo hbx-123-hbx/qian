@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // String 对象
+        // https://www.w3school.com.cn/jsref/jsref_obj_string.asp
+
+
+        // charAt() 方法可返回指定位置的字符。
+        var str = "hello";
+        console.log(str.charAt(1));
+
+        // concat() 方法用于连接两个或多个字符串。
+        var str1 = "Hello ";
+        var str2 = "world!";
+        console.log(str1.concat(str2));
+
+        var str = "hello";
+        console.log(str.indexOf("e"));
+        var str = "Hello world!";
+        // indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置。
+        document.write(str.indexOf("Hello") + "<br />");
+        document.write(str.indexOf("World") + "<br />");
+        document.write(str.indexOf("world") + "<br />");
+        // lastIndexOf() 方法可返回一个指定的字符串值最后出现的位置，在一个字符串中的指定位置从后向前搜索
+        document.write(str.lastIndexOf("Hello") + "<br />");
+        document.write(str.lastIndexOf("World") + "<br />");
+        document.write(str.lastIndexOf("world") + "<br />");
+
+        // match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。
+        var str = "Hello world!";
+        document.write(str.match("world") + "<br />");
+        document.write(str.match("World") + "<br />");
+        document.write(str.match("worlld") + "<br />");
+        document.write(str.match("world!") + "<br />");
+
+        // replace() 方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。
+        var str = "Visit Microsoft!";
+        document.write(str.replace(/Microsoft/, "W3School"));
+        document.write("<br/>");
+
+        // search() 方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。
+        var str = "Visit W3School!";
+        document.write(str.search(/W3School/));
+        document.write("<br/>");
+
+        // slice() 方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。
+        var str = "Hello happy world!";
+        document.write(str.slice(6, 11));
+        document.write("<br/>");
+
+        // split() 方法用于把一个字符串分割成字符串数组。
+        var str = "How are you doing today?";
+        document.write(str.split(" ") + "<br />");
+        document.write(str.split("") + "<br />");
+        document.write(str.split(" ", 3));
+        document.write("<br/>");
+
+        var str = "2019-11-16";
+        console.log(str.split("-"));
+
+        // substr() 方法可在字符串中抽取从 start 下标开始的指定数目的字符。
+        var str = "Hello world!";
+        document.write(str.substr(3, 7));
+        document.write("<br/>");
+
+        var str = "hello";
+        console.log(str.substr(1, 2));
+        console.log(str);
+
+        // substring() 方法用于提取字符串中介于两个指定下标之间的字符。
+        var str = "Hello world!";
+        document.write(str.substring(3, 7));
+
+
+        var str = "hello";
+        console.log(str.substring(1, 2));
+        console.log(str);
+
+    </script>
+</body>
+
+</html>

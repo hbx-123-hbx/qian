@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         /*
+            数据类型：
+            1. 基本类型（原始类型）：string、number、boolean、undefined、null、symbol（es6）
+            2. 引用类型：object
+        */
+        // 函数声明
+        // fn1();
+        // function fn1(){
+
+        // }
+        // // fn1();
+
+        // 函数表达式
+        // var a = 5;
+        // var b = "abc";
+        // var fn2 = function(){
+        //     console.log('sdjhfhdj');
+        // }
+        // fn2();
+
+        // var fn3 = new Function("console.log('sdjhfj')");
+        // fn3();
+
+
+
+
+
+
+        function f1(x){
+           x();
+        }
+        // f1 (function(){
+        //     console.log('hhh')
+        // });
+        var f = function(){
+            console.log('hhh');
+        };
+        f1(f);
+
+
+        function f2 (x){
+            return x;
+        }
+        // f2 (function(){
+        //     console.log('vfv')
+        // });
+        
+        var y = f2 (function(){
+            console.log('vfv')
+        });
+        y();
+
+
+
+
+         // 
+        // 编程范式：
+        // 1. 面向过程编程
+        // 2. 面向对象编程
+        // 3. 泛型编程
+        // 4. 函数式编程
+        // 5. 可微分编程
+
+        // 一段恶心你们的代码，哈哈哈
+        
+        // function f5(a){
+        //     a(function(){
+        //         console.log('jj');
+        //     });
+        // }
+        // f5(function(b){
+        //     b();
+        // });
+
+        function f5(a){
+            a(function(c){
+               c();
+            });
+        }
+        f5(function(b){
+            b(function(){
+                console.log('jj');
+            });
+        });
+        
+    </script>
+</body>
+</html>

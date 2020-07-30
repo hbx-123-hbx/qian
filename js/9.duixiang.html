@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //   创建对象的几种方式：
+        // 1. new Object()
+        var obj1 = new Object();
+        obj1.name = 'list1';
+        obj1.age = 23;
+
+        obj1.sayHello = function () {
+            console.log('111');
+        };
+        // obj1.sayHello();     
+
+
+        // 2.使用对象直接量(literal)
+
+        var o2 = {
+            name: 'list2',
+            age: 6554,
+            sayHello: function () {
+                console.log('222');
+            }
+        };
+        // o2.sayHello();
+        var o4 = {
+            name: 'list2',
+            age: 6554,
+            sayHello: function () {
+                console.log('222');
+            }
+        };
+        // o4.sayHello();
+
+        // console.log(o2==o4);//false
+
+
+
+        // 3.Object.create()
+        // 该方法创建一个新对象(o3)，使用现有的对象(o1)来提供新创建的对象(o3)的__proto__
+
+        // obj1.name = 'list111';
+        var o3 = Object.create(obj1);
+        // console.log(o3);
+        // console.log(obj1);
+
+        // console.log(o3.name, o3.age);
+        // o3.sayHello();
+
+        // console.log(o3==obj1);//false
+
+
+        o3.gender = 'male';
+
+        o3.name = 'list3';
+        obj1.name = 'list11';
+
+        console.log(o3.name);
+
+        // obj1.name = 'list111';
+        // console.log(o3.name);
+
+
+        // var o5 = Object.create(obj1);
+        // var o6 = obj1
+        // console.log(o5);
+        // console.log(o6);
+
+
+        // 原型(prototype)：
+        // o3.__proto__ = o1;
+
+
+        // var o4 = new Object();
+        // o4.name = 'zhangsan';
+        // o4._gender = 'male';
+
+        // // ...
+
+
+        // o4.name = 'lisi';
+        // o4._gender = 'female'; //=> 这么做是错误的
+
+        // console.log(o4._gender);
+
+        
+        // 4. new Class
+
+
+         /* 
+         // es6
+         class Person{
+             constructor(name, age){
+                this.name = name;
+                this.age = age;
+             }
+         }
+
+         var p1 = new Person('lisi', 23);
+         console.log(p1.name, p1.age); */
+
+        //  es5-
+        // 定义类
+        // 约定：属性放在类的构造函数中，方法放在类的原型中
+        var fn = new Function // =>fn=0x1231
+        function Person(name, age){
+            this.name = name;
+            this.age = age;
+            this.sayHello = 0x1231;
+        }
+        /* Person.prototype.sayHello =  function(){
+            console.log('My name is ' + this.name + ', hello');
+        }; */
+
+        // 创建类的实例对象
+        var p1 = new Person('lisi', 34);
+        console.log(p1);
+        // var p2 = new Person('wangwu', 23);
+        // console.log(p2);
+
+        // p1.sayHello();
+
+        // this: 是指对当前对象的引用
+
+    </script>
+</body>
+
+</html>

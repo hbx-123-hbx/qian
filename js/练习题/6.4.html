@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        
+    <meta charset="UTF-8">
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+</head>
+
+<body>
+        
+    <script>
+        var x = prompt('请输入一个字符串');
+        function fn (x){
+            var result = '';
+            for(var i=0;i<x.length;i++){
+                if(parseInt(x.charAt(i)) >=0 && parseInt(x.charAt(i)) <= 9){
+                    result += x.charAt(i);
+                }
+            }
+            return result;
+        } 
+        document.write(fn(x));
+
+        // function CollectDigits(s) {
+        //     var str = "";
+        //     for (var i = 0; i < s.length; i++) {
+        //         if (s.charAt(i) >= 0 && s.charAt(i) < 10) {
+        //             str += s.charAt(i);
+        //         }
+        //     }
+        //     return str;
+        // }
+        // console.log(CollectDigits("1abc23def4"));
+    </script>
+</body>
+
+</html>

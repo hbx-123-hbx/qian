@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function foo(){
+        //     var num1 = Math.floor(Math.random()*9)+1;
+        //     var num2 = Math.floor(Math.random()*9)+1;
+        //     var num3 = Math.floor(Math.random()*9)+1;
+        //     if(num1 ==8||num2 ==8||num3 ==8){
+        //         return true;
+        //     }
+        //     return false;
+        // }
+
+        // var a = 0;
+        // for(var i = 0;i<10;i++){
+        //     if(foo()){
+        //         a++;
+        //     }
+        // }
+        // console.log(a/10);
+
+        var total = 0;
+        var win = 0;
+        var winRate = 0;
+        var numStr = '';
+        var isWin = false;
+
+        function lucky() {
+            var num = 0;
+            numStr = '';
+            isWin = false;
+            for (var i = 0; i < 3; i++) {
+                num = Math.floor(Math.random() * 9 + 1);
+                numStr += num;
+                if (num == 8) {
+                    // 赢了
+                    isWin = true;
+                }
+            }
+            if (isWin) {
+                win++;
+            }
+            total++;
+            winRate = (win / total) * 100 + '%';
+        }
+
+        while (true) {
+            lucky();
+            if(!confirm(numStr + '\n' + (isWin ? '赢' : '输') + '\n胜率:' + winRate + ',继续吗')){
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

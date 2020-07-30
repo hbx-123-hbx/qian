@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [];
+        function fibonacci(n){
+            if (n < 3) {
+                return 1;
+            } else {
+                return fibonacci(n - 2) + fibonacci(n - 1);
+            }
+        }
+        for(var i = 1;i<=40;i++){
+            arr.push(fibonacci(i));
+        }
+        arr.reverse();
+        for (var j=0;j<40;j++){
+            document.write(arr[j]+"&nbsp;");
+            if((j+1)%6 == 0){
+                document.write("<br/>");
+            }
+        }
+
+        // function rFib(n) {
+        //     var aFib = [];
+        //     var f1 = 1;
+        //     var f2 = 1;
+        //     var temp = 0;
+        //     for (var i = 1; i <= n; i++) {
+        //         if (i <= 2) {
+        //             aFib.push(1);
+        //         } else {
+        //             temp = f1 + f2;
+        //             f1 = f2;
+        //             f2 = temp;
+        //             aFib.push(temp);
+        //         }
+        //     }
+        //     return aFib.reverse();
+        // }
+        // var result = rFib(40);
+        // for (var i = 0; i < 40; i++) {
+        //     if (i % 6 == 0) {
+        //         document.write('<br>');
+        //     }
+        //     document.write('<span>' + result[i] + '</span>');
+        // }
+    </script>
+</body>
+</html>
