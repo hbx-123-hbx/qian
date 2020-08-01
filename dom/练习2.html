@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    body{
+      background-color: #000;
+    }
+    li{
+      list-style: none;
+    }
+    .box{
+      border:5px solid white;
+      margin: 0 auto;
+      width: 600px;
+      height: 400px;
+      position: relative;
+    }
+    .swiper-img li{
+      position: absolute;
+      top:0;
+      left: 0;
+    }
+    .swiper-img img{
+        width: 600px;
+        height: 400px;
+    }
+    .swiper-btn li{
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #f90;
+      text-align: center;
+      line-height: 20px;
+      color: #fff;
+    }
+    .swiper-btn{
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      z-index: 101;
+    }
+    .right-btn{
+      float: right;
+      
+    }
+    .left-btn{
+      float: left;
+    }
+    .right-btn .active{
+      background-color: red;
+    }
+    .swiper-img .active{
+      z-index: 100;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="swiper-img">
+      <ul>
+        <li class="active">
+          <img src="./imgs/1.jpg" alt="">
+        </li>
+        <li >
+          <img src="./imgs/2.jpg" alt="">
+        </li>
+        <li >
+          <img src="./imgs/3.jpg" alt="">
+        </li>
+        <li>
+          <img src="./imgs/4.jpg" alt="">
+        </li>
+        <li>
+          <img src="./imgs/5.jpg" alt="">
+        </li>
+      </ul>
+    </div>
+    <div class="swiper-btn">
+      <div class="left-btn">
+        <ul>
+          <li>&lt;</li>
+          <li>&gt;</li>
+        </ul>
+      </div>
+      <div class="right-btn">
+        <ul>
+          <li class="active">1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    var arrBtn = document.getElementsByClassName("left-btn")[0].getElementsByTagName("li");
+    var aBtn = document.getElementsByClassName("right-btn")[0].getElementsByTagName("li");
+    var aImg = document.getElementsByClassName("swiper-img")[0].getElementsByTagName("li");
+    var nowIndex = 0;
+
+    //切换图片函数
+    function changeImg(index){
+      nowIndex = index;
+      for(var j=0;j<aBtn.length;j++){
+        aBtn[j].className = "";
+        aImg[j].className = "";
+      }
+      aBtn[index].className = "active";
+      aImg[index].className = "active";
+    }
+
+    //数字按钮循环绑定事件
+    for(var i=0;i<aBtn.length;i++){
+      aBtn[i].index = i;
+      aBtn[i].onmouseover = function(){
+        changeImg(this.index)
+      }
+    }
+    //向下按钮绑定事件
+    arrBtn[1].onclick = function(){
+      ++nowIndex
+      if(nowIndex==5){
+        nowIndex = 0;
+      }
+      changeImg(nowIndex);
+    }
+    //向上按钮绑定事件
+    arrBtn[0].onclick = function(){
+      --nowIndex;
+      if(nowIndex == -1){
+        nowIndex = 4
+      }
+      changeImg(nowIndex)
+    }
+    
+  </script>
+</body>
+</html>
