@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .box {
+            width: 800px;
+            border: 1px solid black;
+            margin: 200px auto;
+        }
+
+        .title {
+            background-color: black;
+            height: 50px;
+        }
+
+        .title li {
+            width: 100px;
+            height: 50px;
+            float: left;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .bc-item{
+            display: none;
+        }
+        .content{
+            padding: 30px;
+        } 
+        .content .active{
+            display: block;
+        }
+        .title .active{
+            background-color: #ddd;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="title">
+            <ul>
+                <li class="active">第一节课</li>
+                <li>第二节课</li>
+                <li>第三节课</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="bc-item active">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </div>
+            <div class="bc-item">
+                <ul>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+            </div>
+            <div class="bc-item">
+                <ul>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        var aTitle = document.getElementsByClassName("title")[0].getElementsByTagName("li");
+        var aItem = document.getElementsByClassName("bc-item");
+        for (var i=0;i<aTitle.length;i++){
+            aTitle[i].index = i;
+            aTitle[i].onmouseover = function(){
+                for (var j=0;j<aTitle.length;j++){
+                    aTitle[j].className = "";
+                    aItem[j].classList.remove("active");
+                }
+                this.className = "active";
+                aItem[this.index].classList.add("active");
+            }
+        }
+    </script>
+</body>
+
+</html>

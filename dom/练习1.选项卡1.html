@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .container {
+            width: 300px;
+            margin: 50px auto;
+        }
+
+        .title {
+            width: 300px;
+            height: 50px;
+            background-color: gray;
+            border-bottom: 1px solid #000;
+        }
+
+        .title li {
+            float: left;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+        .content{
+            background-color: #555555;
+            padding: 30px;
+        }
+        .content .bc-item{
+            display: none;
+        } 
+        .content .active{
+            display: block;
+        }
+        .title .active{
+            background-color: #000000;
+            color: cornsilk;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <ul>
+                <li class="active">菜单1</li>
+                <li>菜单2</li>
+                <li>菜单3</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="bc-item active">
+                <ul>
+                    <li>1</li>
+                    <li>11</li>
+                    <li>111</li>
+                </ul>
+            </div>
+            <div class="bc-item">
+                <ul>
+                    <li>2</li>
+                    <li>22</li>
+                </ul>
+            </div>
+            <div class="bc-item">
+                <ul>
+                    <li>3</li>
+                    <li>33</li>
+                    <li>333</li>
+                    <li>3333</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        var oTitle = document.getElementsByClassName('title')[0].getElementsByTagName('li');
+        var oItem = document.getElementsByClassName('bc-item');
+        for (var i=0;i<oTitle.length;i++){
+            oTitle[i].index = i;
+            oTitle[i].onclick = function(){
+                for (var j=0;j<oTitle.length;j++){
+                    oTitle[j].className = "";
+                    oItem[j].style.display = "none";
+                }
+                this.className = "active";
+                oItem[this.index].style.display = "block";
+            }
+        } 
+    </script>
+</body>
+
+</html>
