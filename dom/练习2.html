@@ -20,18 +20,14 @@
     .box{
       border:5px solid white;
       margin: 0 auto;
-      width: 600px;
-      height: 400px;
+      width: 750px;
+      height: 291px;
       position: relative;
     }
     .swiper-img li{
       position: absolute;
       top:0;
       left: 0;
-    }
-    .swiper-img img{
-        width: 600px;
-        height: 400px;
     }
     .swiper-btn li{
       display: inline-block;
@@ -105,13 +101,15 @@
     </div>
   </div>
   <script>
+    var oBox = document.getElementsByClassName("box")[0];
     var arrBtn = document.getElementsByClassName("left-btn")[0].getElementsByTagName("li");
     var aBtn = document.getElementsByClassName("right-btn")[0].getElementsByTagName("li");
     var aImg = document.getElementsByClassName("swiper-img")[0].getElementsByTagName("li");
     var nowIndex = 0;
+    var timer = null;
 
     //切换图片函数
-    function changeImg(index){
+    function cheangeImg(index){
       nowIndex = index;
       for(var j=0;j<aBtn.length;j++){
         aBtn[j].className = "";
@@ -125,7 +123,7 @@
     for(var i=0;i<aBtn.length;i++){
       aBtn[i].index = i;
       aBtn[i].onmouseover = function(){
-        changeImg(this.index)
+        cheangeImg(this.index)
       }
     }
     //向下按钮绑定事件
@@ -134,7 +132,7 @@
       if(nowIndex==5){
         nowIndex = 0;
       }
-      changeImg(nowIndex);
+      cheangeImg(nowIndex);
     }
     //向上按钮绑定事件
     arrBtn[0].onclick = function(){
@@ -142,8 +140,81 @@
       if(nowIndex == -1){
         nowIndex = 4
       }
-      changeImg(nowIndex)
+      cheangeImg(nowIndex)
     }
+
+    // 定时播放
+    // var timer = setInterval(function(){
+    //   ++nowIndex
+    //   if(nowIndex==5){
+    //     nowIndex = 0;
+    //   }
+    //   cheangeImg(nowIndex);
+    // },1000)
+
+    //图片播放
+    function play(){
+      timer = setInterval(function(){
+        ++nowIndex
+        if(nowIndex==5){
+          nowIndex = 0;
+        }
+        cheangeImg(nowIndex);
+      },1000)
+    }
+
+    oBox.onmouseover = function(){
+      clearInterval(timer)
+    }
+    
+    oBox.onmouseout = function(){
+      play()
+    }
+    play();
+    // for(var i=0;i<aBtn.length;i++){
+    //   aBtn[i].index = i;
+    //   aBtn[i].onmouseover= function(){
+    //     for(var j=0;j<aBtn.length;j++){
+    //       aBtn[j].className = "";
+    //       aImg[j].className = "";
+    //     }
+    //     this.className = "active"
+    //     aImg[this.index].className="active"
+    //   }
+    // }
+
+
+    // arrBtn[1].onclick = function(){
+    //   ++nowIndex;
+    //   for(var j=0;j<aBtn.length;j++){
+    //     aBtn[j].className = "";
+    //     aImg[j].className = "";
+    //   }
+
+    //   if(nowIndex == 5){
+    //     nowIndex = 0
+    //   }
+
+    //   aBtn[nowIndex].className = "active";
+    //   aImg[nowIndex].className = "active";
+    // }
+
+    // arrBtn[0].onclick = function(){
+    //   --nowIndex;
+    //   for(var j=0;j<aBtn.length;j++){
+    //     aBtn[j].className = "";
+    //     aImg[j].className = "";
+    //   }
+
+    //   if(nowIndex == -1){
+    //     nowIndex = 4
+    //   }
+
+    //   aBtn[nowIndex].className = "active";
+    //   aImg[nowIndex].className = "active";
+    // }
+
+
     
   </script>
 </body>
