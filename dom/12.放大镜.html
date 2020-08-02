@@ -1,29 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-       *{
-           margin: 0;
-           padding: 0;
-       }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #small {
+            width: 400px;
+            height: 400px;
+            float: left;
+            position: relative;
+        }
+        #s-box{
+            width: 200px;
+            height: 200px;
+            background-color: rgba(0,0,0,0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #big {
+            width: 400px;
+            height: 400px;
+            float: left;
+            overflow: hidden;
+            display: none;
+            position: relative;
+        }
+        #b-img{
+            position: absolute;
+        }
     </style>
 </head>
+
 <body>
-    <div id="box">
+    <div id="small">
         <img src="./imgs/s.png" alt="">
-        <div id="m-box"></div>
+        <div id="s-box"></div>
     </div>
     <div id="big">
         <img id="b-img" src="./imgs/b.png" alt="">
     </div>
     <script>
         var oSmall = document.getElementById('small');
-        var oBig = document.getElementById('small');
-        var oSmall = document.getElementById('small');
-        
+        var oBox = document.getElementById('s-box');
+        var oBig = document.getElementById('big');
+        var oImg = document.getElementById('b-img');
+        oSmall.onmouseover = function(){
+            oBox.style.display = 'block';
+            oBig.style.display = 'block';
+
+            var maxWidth = oSmall.offsetWidth - oBox.offsetWidth;
+            var maxHeight = oSmall.offsetHeight - oBox.offsetHeight;            
+            oSmall.onmousemove =function(e){
+                //透明方块移动
+
+                // oBox.style.left = e.clientX -100 +'px';
+                // oBox.style.top = e.clientY -100 +'px';
+                oBox.style.left = e.clientX -oBox.offsetWidth/2 +'px';
+                oBox.style.top = e.clientY -oBox.offsetHeight/2+'px';
+                if(oBox.offsetLeft <0){
+                    oBox.style.left = 0;
+                }
+                if(oBox.offsetLeft >maxWidth){
+                    oBox.style.left = maxWidth + 'px';
+                }
+                if(oBox.offsetTop <0){
+                    oBox.style.top = 0;
+                }
+                if(oBox.offsetTop >maxHeight){
+                    oBox.style.top = maxHeight + 'px';
+                }
+
+                //大方块移动
+                // oImg.style.left = -2*oBox.offsetLeft + 'px';
+                // oImg.style.top = -2*oBox.offsetTop + 'px';
+
+                var maxBigWidth = oImg.offsetWidth - oBig.offsetWidth;
+                var maxBigHeight = oImg.offsetHeight - oBig.offsetHeight;
+
+                //计算移动比例
+                var x = maxBigWidth/maxWidth;
+                var y = maxBigHeight/maxHeight;   
+                
+                oImg.style.left = -x*oBox.offsetLeft + 'px';
+                oImg.style.top = -*oBox.offsetTop + 'px';
+            }
+        }
+        oSmall.onmouseout = function(){
+            oBox.style.display = 'none';
+            oBig.style.display = 'none';
+        }
+
     </script>
 </body>
+
 </html>

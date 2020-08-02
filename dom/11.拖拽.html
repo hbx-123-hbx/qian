@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        #box {
+        #div1{
             width: 200px;
             height: 200px;
             background-color: blueviolet;
@@ -18,40 +13,41 @@
         }
     </style>
 </head>
-
 <body>
-    <div id="box"></div>
+    <div id="div1"></div>
     <script>
-        var oBox = document.getElementById("box");
-        // oBox.onmousedown = function(e){
-        //     var x= e.clientX;
-        //     var y = e.clientY;
-        //     var lx = oBox.offsetLeft;
-        //     var ly = oBox.offsetTop;
-        //     document.onmousemove = function(e){
-        //         console.log(e.clientX,e.clientY);
-        //         oBox.style.left = e.clientX - x + lx +'px';
-        //         oBox.style.top = e.clientY- x + ly +'px';
+        var oDiv1 = document.getElementById('div1');
+        oDiv1.onmousedown = function(e){
+            var x= e.clientX;
+            var y = e.clientY;
+            var lx = oDiv1.offsetLeft;
+            var ly = oDiv1.offsetTop;
+            document.onmousemove = function(e){
+                console.log(e.clientX,e.clientY);
+                oDiv1.style.left = e.clientX - x + lx +'px';
+                oDiv1.style.top = e.clientY- y + ly +'px';
 
-        //     }
-        // }
-        // oBox.onmouseup = function(){
-        //     document.onmousemove = null;
-        // }
-        oBox.onmousedown = function (e) {
-            var thisLeft = e.clientX - oBox.offsetLeft;
-            var thisTop = e.clientY - oBox.offsetTop;
-            document.onmousemove = function (e) {
-                console.log(e.clientX, e.clientY)
-                oBox.style.left = e.clientX - thisLeft + "px";
-                oBox.style.top = e.clientY - thisTop + "px";
             }
         }
-
-        oBox.onmouseup = function () {
+        oDiv1.onmouseup = function(){
             document.onmousemove = null;
         }
+
+
+        // var oBox = document.getElementsByClassName("box")[0];
+        // oBox.onmousedown = function (e) {
+        //     var thisLeft = e.clientX - oBox.offsetLeft;
+        //     var thisTop = e.clientY - oBox.offsetTop;
+        //     document.onmousemove = function (e) {
+        //         console.log(e.clientX,e.clientY);
+        //         oBox.style.position = "absolute";
+        //         oBox.style.left = e.clientX - thisLeft+"px";
+        //         oBox.style.top = e.clientY-thisTop +"px";
+        //     }
+        // }
+        // oBox.onmouseup = function () {
+        //     document.onmousemove = null;
+        // }
     </script>
 </body>
-
 </html>
