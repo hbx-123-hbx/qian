@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        function fn1(){
+            console.log(this);
+        }
+        // fn1();//Window 
+        var aa = new fn1();//fn1 {}
+
+        var oBtn = document.getElementById('btn');
+        oBtn.onclick = function(){
+            var that = this;
+            // console.log(this);// <button id="btn">按钮</button>
+            setTimeout(function(){
+                // console.log(this);//Window
+                that.style.background = "red";
+            },2000)
+        };
+    </script>
+</body>
+</html>

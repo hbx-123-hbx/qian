@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //函数声明 (函数提升)
+        // fn1();
+        function fn1(){
+
+        }
+        fn1();
+
+
+        //函数表达式
+        var fn2 = function(){
+
+        };
+        fn2();
+
+
+        function test(){
+            return function(){
+                console.log('ddd');
+            }
+        }
+        test()();
+
+        function test2(){
+            console.log(a);//undefined
+            var a = 5;
+            // console.log(a);//5
+        }
+        test2();
+        // 变量提升
+        function test3(){
+            var a 
+            console.log(a);
+            var a = 5;
+        }
+        test3();
+
+
+        // 得到函数实参个数 arguments
+        function test4(name,age){
+            console.log(arguments.length);
+            console.log(name,age,arguments[2]);
+        }
+        test4('kjk',55,'male');
+        //得到函数形参个数
+        console.log(test4.length);
+
+        function fac(n){
+            if(n<=1){
+                return 1;
+            }
+            return n *fac(n-1);
+            // return n *arguments.callee(n-1);
+        }
+        var result = fac(10);
+        console.log(result);
+
+        //具名函数
+        var fn3 = function fn4(){
+            console.log('hhhh');
+        }
+        // fn3();//hhhh
+        // fn4();// fn4 is not defined
+
+        var fn5 = function fjj(n){
+            if(n<=1){
+                return 1;
+            }
+            return n *fjj(n-1);
+        };
+        // fn5();
+    </script>
+</body>
+</html>
