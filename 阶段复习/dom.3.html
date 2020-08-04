@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tab1 {
+            margin: 50px auto;
+            border-collapse: collapse;
+        }
+
+        #tab1,
+        #tab1 td {
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">动态添加dom结点</button>
+    <!-- <div id="div1">
+        <h1>
+            1111111
+            <span>2222</span>
+        </h1>
+    </div> -->
+
+    <script>
+        var oBtn1 = document.getElementById('btn1');
+        oBtn1.onclick = function () {
+            var oDiv1 = document.createElement('div');
+            oDiv1.setAttribute('id', 'div1');
+            // oDiv1.setAttributeNode();
+
+            // var oH1 = document.createElement('h1');
+            // var oH1Text = document.createTextNode('h1111');
+            // oH1.appendChild(oH1Text);
+            // oDiv1.appendChild(oH1);
+
+            // var oSpan = document.createElement('span');
+            // var oSpanText = document.createTextNode('span222');
+            // oSpan.appendChild(oSpanText);
+            // oH1.appendChild(oSpan);
+
+            oDiv1.innerHTML = "<h1>1111111<span>2222</span></h1>";
+
+            document.body.appendChild(oDiv1);
+
+            oDiv1.firstChild.style.background = "red";
+        }
+
+    </script>
+</body>
+
+</html>
