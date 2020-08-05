@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.5.1.js"></script>
+    <script>
+        // $(document).ready(function(){
+        //     var oBtn = document.getElementById('btn');
+        //     oBtn.onclick = function(){
+        //         alert('hhhh');
+        //     }
+        // });
+
+    //    window.onload = function(){
+    //         var oBtn = document.getElementById('btn');
+    //         oBtn.onclick = function(){
+    //             alert('hhhh');
+    //         }
+    //     };
+    </script>
+</head>
+<body>
+    <img src="../image/1.jpg" alt="">
+    <img src="../image/2.jpg" alt="">
+    <img src="../image/3.jpg" alt="">
+    <button id="btn">按钮</button>
+    <script>
+        //文档就绪函数：等待整个文档中的所有的dom结构加载完毕后再执行
+        // $(document).ready(function(){
+        //     var oBtn = document.getElementById('btn');
+        //     oBtn.onclick = function(){
+        //         alert('hhhh');
+        //     }
+        // });
+
+        // window.onload = function(){
+        //    console.log(111);
+        // };
+        // window.onload = function(){
+        //    console.log(222);
+        // };
+        //222
+
+        // $(document).ready(function(){
+        //     console.log(111);
+        // });
+        // $(document).ready(function(){
+        //     console.log(222);
+        // });
+        // 111 222
+
+
+        window.onload = function(){
+            console.log(111);
+        };
+        $(document).ready(function(){
+            console.log(222);
+        });
+        //222 111
+        //window.onload 等待整个文档中的所有资源文件全部加载完毕后再执行
+        //文档就绪函数：等待整个文档中的所有的dom结构加载完毕后再执行
+
+        $(function(){
+            console.log(333);
+        });
+    </script>
+</body>
+</html>

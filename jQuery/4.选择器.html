@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.5.1.js"></script>
+</head>
+
+<body>
+    <input name="aaa" />
+    <input name="apple" type="checkbox"/>
+    <input name="flower" type="checkbox" checked="checked" />
+    <table id="tab1" border="1">
+        <tr>
+            <td>td 1</td>
+            <td>td 2</td>
+            <td>td 3</td>
+        </tr>
+        <tr>
+            <td>td 1</td>
+            <td>td 2</td>
+            <td>td 3</td>
+        </tr>
+        <tr>
+            <td>td 1</td>
+            <td>td 2</td>
+            <td>td 3</td>
+        </tr>
+        <tr>
+            <td>td 1</td>
+            <td>td 2</td>
+            <td>td 3</td>
+        </tr>
+        <tr>
+            <td>td 1</td>
+            <td>td 2</td>
+            <td>td 3</td>
+        </tr>
+        <tr>
+            <td>td 1</td>
+            <td>td 2</td>
+            <td>td 3</td>
+        </tr>
+        <tr>
+            <td>td 1</td>
+            <td>td 2</td>
+            <td>td 3</td>
+        </tr>
+        <tr>
+            <td>td 1</td>
+            <td>td 2</td>
+            <td>td 3</td>
+        </tr>
+    </table>
+
+    <ul id="ul1">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li></li>
+    </ul>
+    <script>
+        $(function () {
+            $('input[name = aaa]').css({
+                background:'red'
+            });
+        });
+        // $(function () {
+        //     $('input:checked').click(function(){
+        //         console.log('fff')
+        //     });
+        // });
+        $(function () {
+            $('input:not(:checked)').click(function(){
+                console.log('fff')
+            });
+
+            $('#tab1 tr:even').css('background', 'red');
+            $('#tab1 tr:odd').css('background', 'green');
+
+            $('#tab1 tr:eq(1)').css('background', 'blue');
+
+            $('#ul1 li:contains("1")').css('background', 'blue');
+            $('#ul1 li:empty').css('background', 'green');
+        });
+
+    </script>
+</body>
+
+</html>

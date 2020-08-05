@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.5.1.js"></script>
+</head>
+<body>
+    <div id="div1">div1</div>
+    <script>
+        $(function(){
+            var oDiv1 = document.getElementById('div1');//原生dom对象
+            var oDiv2 = $('#div1');//jq对象
+
+            console.log(oDiv1 == oDiv2);//false
+            console.log(oDiv1);
+            console.log(oDiv2);
+
+            //jq对象 -> 原生dom对象
+            var oDiv3 = $('#div1')[0];
+            console.log(oDiv1 == oDiv3);//true
+
+            //原生dom对象 -> jq对象
+            var $div4 = $(oDiv1);
+
+            // var o1 = {name:'ddd',age:11};
+            // var o2 = {name:'ddd',age:11};
+            // console.log(o1 == o2);//false
+        });
+
+        
+    </script>
+</body>
+</html>

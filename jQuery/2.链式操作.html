@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.5.1.js"></script>
+</head>
+<body>
+    <div id="div1">div1</div>
+    <script>
+        //链式操作
+        $(function(){
+            $('#div1').click(function(){
+                alert('kkkk');
+            })
+            .css({width:'200px',height:'100px',background:'red'})
+            .append('<h1>这是h1</h1>')
+            .css({background:'green'})
+            .mouseover(function(){
+                console.log('rffff');
+            });
+        });
+    </script>
+</body>
+</html>
