@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.5.1.js"></script>
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        $(function () {
+           $('#btn').click(function(){
+               console.log('hhhh');
+           });
+           $('#btn').click(function(){
+               console.log('kkkk');
+           });
+
+           $('#btn').on('click',function(){
+               console.log('ffff');
+           });
+            
+        });
+    </script>
+</body>
+
+</html>

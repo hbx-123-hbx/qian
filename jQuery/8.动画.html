@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.5.1.js"></script>
+    <script src="./jquery.easing.1.3.js"></script>
+</head>
+<style>
+    #div1 {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: relative;
+        left: 0;
+    }
+</style>
+
+<body>
+    <button id="fadeIn">fadeIn</button>
+    <button id="fadeOut">fadeOut</button>
+    <button id="slideUp">slideUp</button>
+    <button id="slideDown">slideDown</button>
+    <button id="btn">动画完成的回调</button>
+    <button id="fadeTo">fadeTo</button>
+    <button id="hide">hide</button>
+    <button id="show">show</button>
+    <button id="animate">animate</button>
+    <div id="div1"></div>
+    <script>
+        $(function () {
+            $('#fadeIn').click(function () {
+                $('#div1').fadeIn(2000);
+            });
+            $('#fadeOut').click(function () {
+                $('#div1').fadeOut(2000);
+            });
+            $('#btn').click(function () {
+                var $div1 = $('#div1')
+                //动画是异步的
+                $div1.fadeOut(function () {
+                    // console.log('ssss');
+                    // $div1.fadeIn(2000);
+                    $div1.fadeIn(2000,function(){
+                        $div1.slideUp(2000);
+                        // $div1.slideToggle();
+                    });
+                });
+            });
+
+            $('#slideUp').click(function () {
+                $('#div1').slideUp(2000);
+            });
+            $('#slideDown').click(function () {
+                $('#div1').slideDown(2000);
+            });
+
+            $('#fadeTo').click(function(){
+                $('#div1').fadeTo(2000,0.5);
+            });
+            $('#hide').click(function () {
+                $('#div1').hide(1000);
+            });
+            $('#show').click(function () {
+                $('#div1').show(1000);
+            });
+            $('#animate').click(function(){
+                var $div1 = $('#div1');
+                $div1.animate({
+                    opacity:0.25,
+                    left: '+500'
+                }, 3000, "easeInQuart", function(){
+                    $div1.animate({
+                        opacity: 1,
+                        left: "-500"
+                    }, 200);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
