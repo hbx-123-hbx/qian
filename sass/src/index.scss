@@ -71,13 +71,28 @@ $attr:width;
     //     padding: $p;
     // }
     // .box2{
-    //     @include box(400px 100px 50px);
+    //     @include box(400px,100px,50px);
     //     background-color: red;
     // }
-    // .box2{
-    //     @include box(400px 100px 50px);
+    // .box3{
+    //     @include box(800px,100px,50px);
     //     background-color: blue;
     // }
+    @mixin box ($w:200px, $h:200px, $p:20px) {
+        width: $w;
+        height: $h;
+        padding: $p;
+      }
+    
+      .box2 {
+        @include box($h:400px, $p:20px);
+        background: red;
+      }
+    
+      .box3 {
+        @include box($h:400px);
+        background: blue;
+      }
     .box4{
         width: 20px;
         height: 20px;
@@ -128,4 +143,42 @@ $attr:width;
         color: map-has-key($map,color2);
         
     }
+    @for $i from 1 to 10 {
+        .item#{$i} {
+          width: 100px*$i;
+        }
+    }
+    @for $i from 1 through 10 {
+        .item#{$i} {
+          width: 100px*$i;
+        }
+    }
+    @each $item in $list1 {
+        .item-#{$item} {
+          width: #{$item};
+        }
+    }
+    $i:1;
+
+    @while $i<5 {
+        .student-#{$i} {
+          padding: 20px;
+        }
+    
+        $i:$i+1;
+    }
+    @function fn1($n) {
+        @if($n==0) {
+          @return red;
+        }@else if($n==1) {
+          @return green;
+        }@else {
+          @warn 'warn';
+          // @error 'error';
+          @return blue;
+        }
+    }
+    .box11{
+        color: fn1(2);
+      }
 }

@@ -30,6 +30,18 @@
   padding-top: 20px;
   padding-left: 50px;
 }
+#container .box2 {
+  width: 200px;
+  height: 400px;
+  padding: 20px;
+  background: red;
+}
+#container .box3 {
+  width: 200px;
+  height: 400px;
+  padding: 20px;
+  background: blue;
+}
 #container .box4, #container .box5 {
   width: 20px;
   height: 20px;
@@ -70,6 +82,87 @@
   color: color1, color2, color3;
   color: red, green, blue;
   color: true;
+}
+#container .item1 {
+  width: 100px;
+}
+#container .item2 {
+  width: 200px;
+}
+#container .item3 {
+  width: 300px;
+}
+#container .item4 {
+  width: 400px;
+}
+#container .item5 {
+  width: 500px;
+}
+#container .item6 {
+  width: 600px;
+}
+#container .item7 {
+  width: 700px;
+}
+#container .item8 {
+  width: 800px;
+}
+#container .item9 {
+  width: 900px;
+}
+#container .item1 {
+  width: 100px;
+}
+#container .item2 {
+  width: 200px;
+}
+#container .item3 {
+  width: 300px;
+}
+#container .item4 {
+  width: 400px;
+}
+#container .item5 {
+  width: 500px;
+}
+#container .item6 {
+  width: 600px;
+}
+#container .item7 {
+  width: 700px;
+}
+#container .item8 {
+  width: 800px;
+}
+#container .item9 {
+  width: 900px;
+}
+#container .item10 {
+  width: 1000px;
+}
+#container .item-1px {
+  width: 1px;
+}
+#container .item-solid {
+  width: solid;
+}
+#container .item-#000000 {
+  width: #000000;
+}
+#container .student-1 {
+  padding: 20px;
+}
+#container .student-2 {
+  padding: 20px;
+}
+#container .student-3 {
+  padding: 20px;
+}
+#container .student-4 {
+  padding: 20px;
+}
+#container .box11 {
+  color: blue;
 }
 
 /*# sourceMappingURL=index.css.map */
