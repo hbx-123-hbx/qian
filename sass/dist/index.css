@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*   */
+#container {
+  width: 1000px;
+  margin: 0 auto;
+  background: #eecc00;
+  font-size: 20px;
+  border: 1px solid #000000;
+}
+#container .box1 {
+  width: 800px;
+  height: 300px;
+  background-color: #cccccc;
+  border: 1px solid #000000;
+}
+#container .box1 p {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+#container .box1 p:hover {
+  background-color: blueviolet;
+}
+#container .box1-item {
+  color: chartreuse;
+  padding-top: 20px;
+  padding-left: 50px;
+}
+#container .box4, #container .box5 {
+  width: 20px;
+  height: 20px;
+}
+#container .box5 {
+  font-size: 22px;
+}
+#container .box6 {
+  width: 160px;
+  height: 30px;
+  padding: 133.3333333333%;
+}
+#container .box7 {
+  background: #cccccc url("./imgs/bg.jpg");
+}
+#container .box7::after {
+  content: "HELLO WORLD";
+  font-size: 11;
+  content: 5;
+  content: "hello666 world";
+}
+#container .box8 {
+  color: #eecc00;
+  color: #ffe755;
+  color: #887500;
+  color: #eecc00;
+  color: rgba(238, 204, 0, 0.7);
+}
+#container .box9 {
+  border: 1px solid #000000;
+  border: 1px solid red;
+  border: 2;
+  border: 1px solid blue;
+  color: #000000;
+  z-index: 3;
+}
+#container .box10 {
+  color: color1, color2, color3;
+  color: red, green, blue;
+  color: true;
+}
+
+/*# sourceMappingURL=index.css.map */

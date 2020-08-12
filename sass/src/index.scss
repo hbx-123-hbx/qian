@@ -1,0 +1,131 @@
+@import './main.scss';
+$color:#eecc00;
+// 变量
+$color:#eeccff!default;
+$student:'#student-list li';
+$attr:width;
+
+/*   */
+//
+#container{
+    width: 1000px;
+    margin: 0 auto;
+    background: $color;
+    font-size: 20px;
+    border: 1px solid #000000;
+    .box1{
+        width: 800px;
+        height: 300px;
+        background-color: #cccccc;
+        border: 1px solid #000000;
+        p{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            &:hover{
+                background-color: blueviolet;
+            }
+        }
+        &-item{
+            color: chartreuse;
+            padding: {
+                top: 20px;
+                left: 50px;
+            }
+        }
+
+        //特殊变量
+
+       
+    } 
+    // .box2{
+    //     width: 500px;
+    //     height: 400px;
+    //     padding: 20px;
+    //     background-color: red;
+    // }
+    // .box3{
+    //     width: 500px;
+    //     height: 400px;
+    //     padding: 20px;
+    //     background-color: blue;
+    // }
+    
+    // @mixin box(){
+    //     width: 500px;
+    //     height: 400px;
+    //     padding: 20px;
+    // }
+    // .box2{
+    //     @include box();
+    //     background-color: red;
+    // }
+    // .box2{
+    //     @include box();
+    //     background-color: blue;
+    // }
+
+    // @mixin box($w,$h,$p){
+    //     width: $w;
+    //     height: $h;
+    //     padding: $p;
+    // }
+    // .box2{
+    //     @include box(400px 100px 50px);
+    //     background-color: red;
+    // }
+    // .box2{
+    //     @include box(400px 100px 50px);
+    //     background-color: blue;
+    // }
+    .box4{
+        width: 20px;
+        height: 20px;
+    }
+    .box5{
+        @extend .box4;
+        font-size: 22px;
+    }
+    .box6{
+        width: 20px*8;
+        height: (90px/3);
+        padding: percentage(800px/600px);
+    }
+    $img:'bg';
+    $str:'hello world';
+    .box7{
+        background: #cccccc url('./imgs/' + $img + '.jpg');
+
+        &::after{
+            content: to-upper-case($str);
+            font-size: str-length($str);
+            content: str-index($str,"o");
+            content: str-insert($str,"666", 6);
+        }
+    }
+    .box8{
+        color: $color;
+        color: lighten($color, 20%);
+        color: darken($color, 20%);
+        color: opacify($color,0.5);
+        color: transparentize($color,0.3);
+    }
+    $list1:1px solid #000000;
+    $list2:1px solid;
+    $list3:blue;
+    .box9{
+        border: $list1;
+        border: append($list2,red);
+        border: index($list1,solid);
+        border: join($list2, $list3);
+        color: nth($list1,3);
+        z-index: length($list1);
+    }
+    $map:(color1:red,color2:green,color3:blue,);
+    .box10{
+        color: map-keys($map);
+        color: map-values($map);
+        color: map-has-key($map,color2);
+        
+    }
+}
