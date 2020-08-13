@@ -1,0 +1,14 @@
+h1{
+    color: red;
+}
+#div1{
+    background-image: url(./images/1.jpg);
+    width: 400px;
+    height: 400px;
+    background-repeat: no-repeat;
+    transform: rotate(30deg);
+}
+
+#studeng{
+    padding: 30px;
+}
